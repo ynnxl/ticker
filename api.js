@@ -12,7 +12,7 @@ const options = {
     symbol: 'MSFT'
   },
   headers: {
-    'x-rapidapi-key': 'Sign Up for Key',
+    'x-rapidapi-key': 'd9895ee554msh328d5c7132b71e8p19112djsnf0da65ecb2ce',
     'x-rapidapi-host': 'alpha-vantage.p.rapidapi.com'
   }
 };
