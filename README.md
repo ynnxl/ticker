@@ -2,12 +2,16 @@
 
 This program is a stock market analysis and asset managment software
 
-npm start to run the program
+To run the program enter the following in the terminal:
+
+    npm start
 
 ## Install Packages
 
-npm init
-npm install axios express dotenv nodemon mongoose cors
+You will need to install the required package modules.
+
+    npm init
+    npm install axios express dotenv nodemon mongoose cors
 
 ## Module Description
 
