@@ -1,8 +1,10 @@
 # ticker
 
 This program is a stock market analysis and asset managment software
+    
+    npm start
 
-npm start to run the program
+(npm start to run the program
 
 ## Install Packages
 
