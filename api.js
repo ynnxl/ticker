@@ -1,5 +1,5 @@
 const axios = require('axios');
-const axios = require('cheerios');
+const cheerio = require('cheerio');
 
 const options = {
   method: 'GET',
