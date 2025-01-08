@@ -25,13 +25,22 @@ exports.addShares = async (req, res) => {
 
     consol.log(shares);
 }
+exports.deleteShares = async (req, res) => {
+    const {id} = req.params;
+
+    SharesSchema.findByIdAndDelete(id)
+        .then((shares) =>{
+            res.status(200).json({message: 'Shares Removed'})
+        })
+}
 
 exports.getShares = async (req, res) => {
     
     try {
         const shares = await SharesSchema.find().sort({createdAt: -1})
+        res.status(200).json(shares)
         
     }catch(error) {
-
+        res.status(500).json({message: 'Server Error'})
     }
 }
