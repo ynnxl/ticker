@@ -2,10 +2,12 @@
 
 This program is a stock market analysis and asset managment software
 
+npm start to run the program
+
 ## Install Packages
 
 npm init
-npm install axios express dotenv nodemon mongoose
+npm install axios express dotenv nodemon mongoose cors
 
 ## Module Description
 
