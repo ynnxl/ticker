@@ -2,7 +2,7 @@
 
 This program is a stock market analysis and asset managment software
 
-To run the program enter the following in the terminal:
+Enter the following command into your command terminal to run the program.
 
     npm start
 
