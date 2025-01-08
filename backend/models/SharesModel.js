@@ -9,17 +9,17 @@ const SharesSchema = new mongoose.Schema({
     }, 
     amount: {
         type: Number,
-        required: true,
+        required: false,
         trim: true,
         maxLength: 6
     },
     date: {
-        type: Number,
-        required: true,
+        type: Date,
+        required: false,
         trim: true,
         maxLength: 6
     }
 
 }, {timestamps: true})
 
-module.exports = mongoose.model('shares', SharesSchema)
+module.exports = mongoose.model('Shares', SharesSchema)

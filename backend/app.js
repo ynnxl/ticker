@@ -17,7 +17,7 @@ app.get('/', (req, res)=> {
     res.send('Hello World')
 })
 
-readdirSync('./routes/').map((route) => app.use('/api/v1', require('./routes/' + route)))
+readdirSync('./routes/').map((route) => app.use('/apiv1/', require('./routes/' + route)))
 
 const server = () => {
     database()

@@ -2,21 +2,36 @@ const SharesSchema = require("../models/SharesModel")
 
 
 exports.addShares = async (req, res) => {
-    const {title, amount, date} = req.body
+    const {ticker, amount, date} = req.body 
 
     const shares = SharesSchema({
-        title,
+        ticker,
         amount,
-        date,
+        date
     })
     try {
-        if (!title || !amount || !date){
-            return res.status(400).json({error: 'Something went wrong!'})
+        if (!ticker || !amount || !date){
+            return res.status(400).json({message: 'Something went wrong!'})
         }
+        if (amount <=0 || !amount === 'number'){
+            return res.status(400).json({message: 'Invalid amount input'})
+
+        }
+        await shares.save()
+        res.status(200).json({message: 'Shares Added'})
     } catch (error){
-        
+        res.status(500).json({message: 'There was a problem'})
     }
 
+    consol.log(shares);
+}
 
-    consol.log(shares)
+exports.getShares = async (req, res) => {
+    
+    try {
+        const shares = await SharesSchema.find().sort({createdAt: -1})
+        
+    }catch(error) {
+
+    }
 }
