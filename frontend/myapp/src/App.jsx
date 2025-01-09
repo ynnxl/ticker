@@ -9,6 +9,9 @@ function App() {
       <Header/>
     </div>
     <body>
+      <div>
+        <h1>Welcome to Ticker</h1>
+      </div>
     </body>
   </main>
   )
