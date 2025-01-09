@@ -7,6 +7,7 @@ function footer() {
 
     
 
-)}
+  )
+}
 
-export default footer()
+export default footer
