@@ -22,7 +22,7 @@ readdirSync('./routes/').map((route) => app.use('/apiv1/', require('./routes/' +
 const server = () => {
     database()
     app.listen(PORT, () => {
-        console.log('Hello W', PORT)
+        console.log('https://localhost:', PORT)
     })
 }
 

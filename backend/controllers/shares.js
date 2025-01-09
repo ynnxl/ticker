@@ -2,15 +2,16 @@ const SharesSchema = require("../models/SharesModel")
 
 
 exports.addShares = async (req, res) => {
-    const {ticker, amount, date} = req.body 
+    const {ticker, exchange, amount, date} = req.body 
 
     const shares = SharesSchema({
         ticker,
+        exchange,
         amount,
         date
     })
     try {
-        if (!ticker || !amount || !date){
+        if (!ticker || !exchange || !amount || !date){
             return res.status(400).json({message: 'Something went wrong!'})
         }
         if (amount <=0 || !amount === 'number'){
@@ -27,10 +28,12 @@ exports.addShares = async (req, res) => {
 }
 exports.deleteShares = async (req, res) => {
     const {id} = req.params;
-
     SharesSchema.findByIdAndDelete(id)
         .then((shares) =>{
             res.status(200).json({message: 'Shares Removed'})
+        })
+        .catch((error) =>{
+            res.status(500).json({messsag: 'Server Error'})
         })
 }
 

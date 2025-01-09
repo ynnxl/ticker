@@ -1,24 +1,10 @@
 const mongoose = require('mongoose');
 
 const SharesSchema = new mongoose.Schema({
-    ticker: {
-        type: String,
-        required: true,
-        trim: true,
-        maxLength: 50,
-    }, 
-    amount: {
-        type: Number,
-        required: false,
-        trim: true,
-        maxLength: 6
-    },
-    date: {
-        type: Date,
-        required: false,
-        trim: true,
-        maxLength: 6
-    }
+    ticker: String,
+    exchange: String,
+    amount: Number,
+    date: Date
 
 }, {timestamps: true})
 
