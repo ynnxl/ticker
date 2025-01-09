@@ -5,7 +5,7 @@ function header() {
 
     return(
         <main>
-            <body class='header'>
+            <body className='header'>
                 <a></a>
                 <div>
                 <ul>
