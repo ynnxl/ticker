@@ -6,10 +6,18 @@ function header() {
     return(
         <main>
             <body class='header'>
-                Welcome to Ticker
-                <a>Home</a>
+                <a></a>
+                <div>
+                <ul>
+                    <li>
+                        <a>Home</a>
+                    </li>
+                    <li>
+                        <a>My Portfolio</a>
+                    </li>
+                </ul>
+                </div>
             </body>
-            
         </main>
         
     )
