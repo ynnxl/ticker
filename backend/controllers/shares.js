@@ -21,7 +21,7 @@ exports.addShares = async (req, res) => {
         await shares.save()
         res.status(200).json({message: 'Shares Added'})
     } catch (error){
-        res.status(500).json({message: 'There was a problem'})
+        res.status(500).json({message: 'Server Error'})
     }
 
     consol.log(shares);
