@@ -1,10 +1,15 @@
 # ticker
 
-This program is a stock market analysis and asset managment software
+This program is a stock market analysis and asset managment software.
 
 Enter the following command into your command terminal to run the program.
+Backend:
 
     npm start
+
+Frontend:
+
+    npm run dev
 
 ## Install Packages
 
