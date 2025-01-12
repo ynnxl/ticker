@@ -3,9 +3,10 @@ import '../styles/PageStyle.css'
 
 function footer() {
 
-  return(
+  return (
+    <div>
 
-    
+    </div>
 
   )
 }
