@@ -11,7 +11,14 @@ function App() {
     </div>
     <body>
       <div>
-        <h1>Welcome to Ticker</h1>
+        <h1 className='page_title'>Welcome to Ticker</h1>
+      </div>
+      <div className='homepage_container'>
+          <div className='marketcap_container'>
+
+          </div>
+          <div className='topgainer_container'>
+          </div>
       </div>
     </body>
   </main>

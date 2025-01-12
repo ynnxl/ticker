@@ -7,21 +7,43 @@
     display: flex;
     padding-right: 10px;
     padding-left: 10px;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    border-style: solid;
+    border-color: hsla(0, 0%, 100%, 0.30);
+    border-width: 1px;
+    border-radius: 5px;
+}
+.searchBox{
+    width: 300px;
+    height: 20px;
+    background-color: hsla(0, 0%, 100%, 0.05);
     border-style: solid;
     border-color: hsla(0, 0%, 100%, 0.30);
     border-width: 1px;
     border-radius: 3px;
 }
-.header_ img{
-    text-decoration: none;
+.page_title{
+    display: flex;
+    justify-content: space-around;
 }
-.searchBox{
-    width: 300px;
-    height: 20px;
-    background-color: ;
-    border-radius: 3px;
+.homepage_container{
+    display: flex;
+    justify-content: space-around;
+}
+.marketcap_container{
+    border-style: solid;
+    border-color: hsla(0, 0%, 100%, 0.30);
     border-width: 1px;
-    border-color: grey;
+    border-radius: 5px;
+    height: 100px;
+    width: 45%;
+}
+.topgainer_container{
+    border-style: solid;
+    border-color: hsla(0, 0%, 100%, 0.30);
+    border-width: 1px;
+    border-radius: 5px;
+    height: 100px;
+    width: 45%;
 }

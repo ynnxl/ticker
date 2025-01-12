@@ -6,14 +6,6 @@ function header() {
     return (
         <main>
             <div className='header'>
-                <a></a>
-                <div>
-                <ul>
-                    <div className='header_box'>
-                        <img className='header_img' src='/'></img>
-                    </div>
-                </ul>
-                </div>
                 <form className='search'>
                     <label >
                         <input
@@ -22,10 +14,6 @@ function header() {
                         />
                     </label>
                 </form>
-                <div>
-                    <img>
-                    </img>
-                </div>
             </div>
         </main>
         
