@@ -5,19 +5,13 @@ function header() {
 
     return (
         <main>
-            <body className='header'>
+            <div className='header'>
                 <a></a>
                 <div>
                 <ul>
-                    <li>
-                        <img src='/'></img>
-                    </li>
-                    <li>
-                        <a>Home</a>
-                    </li>
-                    <li>
-                        <a>My Portfolio</a>
-                    </li>
+                    <div className='header_box'>
+                        <img className='header_img' src='/'></img>
+                    </div>
                 </ul>
                 </div>
                 <form className='search'>
@@ -28,7 +22,11 @@ function header() {
                         />
                     </label>
                 </form>
-            </body>
+                <div>
+                    <img>
+                    </img>
+                </div>
+            </div>
         </main>
         
     )
