@@ -23,7 +23,11 @@
     border-width: 1px;
     border-radius: 3px;
 }
+.page_title_container{
+    padding: 50px;
+}
 .page_title{
+    color: white;
     display: flex;
     justify-content: space-around;
 }
@@ -32,6 +36,8 @@
     justify-content: space-around;
 }
 .marketcap_container{
+    color: white;
+    padding: 0px 20px 0px 20px;
     border-style: solid;
     border-color: hsla(0, 0%, 100%, 0.30);
     border-width: 1px;
@@ -40,6 +46,8 @@
     width: 45%;
 }
 .topgainer_container{
+    color: white;
+    padding: 0px 20px 0px 20px;
     border-style: solid;
     border-color: hsla(0, 0%, 100%, 0.30);
     border-width: 1px;
