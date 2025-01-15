@@ -31,8 +31,7 @@ function App() {
           <div className='marketcap_container'>
             <h3>Market Cap</h3>
             <div>
-              /*Code below not working, remove if not fixed*/
-              {(typeof backendData.messages === 'undefined') ? (
+              {(typeof backendData.message === 'undefined') ? (
                 <p>Loading...</p>
               ): (
                 backendData.message.map((message, i) => (

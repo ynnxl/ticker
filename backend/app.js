@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(cors())
 
 app.get('/api', (req, res)=> {
-    res.json({message: "Hello World!"});
+    res.json({ message: 'Hello World!' });
 })
 
 readdirSync('./routes/').map((route) => app.use('/api', require('./routes/' + route)))
