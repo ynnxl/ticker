@@ -1,6 +1,6 @@
 # ticker
 
-This program is a stock market analysis and asset managment software.
+This software will allow individuals and businesses to analyze investment opportunities for company equity acquisitions. Customers will be able to view company data, track investment positions in those companies, and view articles and blogs for those particular companies.
 
 Enter the following command into your command terminal to run the program.
 Backend:
