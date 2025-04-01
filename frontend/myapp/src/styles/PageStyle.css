@@ -32,8 +32,8 @@
     justify-content: space-around;
 }
 .homepage_container{
-    display: flex;
-    justify-content: space-around;
+    /*display: flex;*/
+    /*justify-content: space-around;*/
 }
 .marketcap_container{
     color: white;
@@ -43,7 +43,7 @@
     border-width: 1px;
     border-radius: 5px;
     height: 100px;
-    width: 45%;
+    width: Auto;
 }
 .topgainer_container{
     color: white;
@@ -53,5 +53,15 @@
     border-width: 1px;
     border-radius: 5px;
     height: 100px;
-    width: 45%;
+    width: 30%;
+}
+.myportfolio_container{
+    color: white;
+    padding: 0px 20px 0px 20px;
+    border-style: solid;
+    border-color: hsla(0, 0%, 100%, 0.30);
+    border-width: 1px;
+    border-radius: 5px;
+    height: 250px;
+    width: 30%;
 }
