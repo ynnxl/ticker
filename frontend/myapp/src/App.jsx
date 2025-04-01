@@ -1,22 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
-import { useEffect } from 'react';
+
 import './styles/PageStyle.css'
 import Header from './components/header'
 //import Footer from './components/footer'
 function App() {
-
-  // const [backendData, setBackendData] = useState([{}])
-  
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/api/").then(
-  //     response => response.json()
-  //   ).then(
-  //     data => {
-  //       setBackendData(data)
-  //     }
-  //   )
-  // }, [])
 
   return (
   <main>
@@ -41,7 +29,7 @@ function App() {
                 </thead>
                 <tbody>
                   <Symbol ticker='AAPL'/>
-                  <Symbol ticker='AAPL'/>
+                  <Symbol ticker='MSFT'/>
                   <Symbol ticker='AAPL'/>
                 </tbody>
               </table>

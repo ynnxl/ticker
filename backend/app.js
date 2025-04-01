@@ -7,10 +7,30 @@ const { database } = require('./database/database');
 
 const app = express()
 
-
-
-
 require('dotenv').config();
+
+const PORT = process.env.PORT
+
+app.use(express.json())
+app.use(cors())
+
+app.get('/', (req, res)=> {
+    res.send("Server is Ready");
+})
+app.get('/api/symbol', (req, res)=> {
+    res.send(symbol);
+})
+
+const server = () => {
+    app.listen(PORT, () => {
+        console.log('https://localhost:', PORT)
+    })
+}
+
+server()
+
+//readdirSync('./routes/').map((route) => app.use('/api', require('./routes/' + route)))
+
 const finnhub = require('finnhub');
 
 async function getSymbolPrice(symbol){
@@ -28,5 +48,6 @@ async function getSymbolPrice(symbol){
 }
 
 getSymbolPrice('AAPL')
+
 
 

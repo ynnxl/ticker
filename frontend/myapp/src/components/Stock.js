@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import iex from '../config/iex.js';
+import iex from '../';
 
 class Stock extends Component {
 
