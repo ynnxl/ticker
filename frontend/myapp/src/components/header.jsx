@@ -1,24 +1,17 @@
 import React from 'react'
+import Search from "./Search";
+import {mockCompanyDetails} from "../constants/mock";
 import '../styles/PageStyle.css'
 
-function header() {
+function Header() {
 
     return (
-        <main>
             <div className='header'>
-                <form className='search'>
-                    <label >
-                        <input
-                            className='searchBox'
-                            type="text"
-                        />
-                    </label>
-                </form>
+                <h1>{mockCompanyDetails.name}</h1>
+                <Search />
             </div>
-        </main>
-        
     )
 }
 
-export default header
+export default Header;
 

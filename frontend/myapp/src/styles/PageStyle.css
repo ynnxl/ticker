@@ -32,8 +32,8 @@
     justify-content: space-around;
 }
 .homepage_container{
-    /*display: flex;*/
-    /*justify-content: space-around;*/
+    display: flex;
+    justify-content: space-around;
 }
 .marketcap_container{
     color: white;
@@ -43,7 +43,7 @@
     border-width: 1px;
     border-radius: 5px;
     height: 100px;
-    width: Auto;
+    width: 30%;
 }
 .topgainer_container{
     color: white;
