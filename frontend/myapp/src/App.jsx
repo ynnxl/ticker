@@ -25,18 +25,20 @@ function App() {
             <div className='marketcap_container'>
               <h3>Market Cap</h3>
               <div>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Ticker</th>
-                        <tbody><MarketCap symbol={mockCompanyDetails.name}/></tbody>
-                      <th>Price</th>
-                       <tc><MarketCap price={mockStockQuote.c}/></tc>
-                      <th>Date</th>
-                    </tr>
-                  </thead>
-                </table>
-                
+                <ul>
+                  <h3>Ticker</h3>
+                  <li><MarketCap symbol={mockCompanyDetails.name}/></li>
+                  <li> Google</li>
+                  <li>Facebook</li>
+                  <li>Tesla</li>
+                </ul>
+                <ul>
+                  <h3>Price</h3>
+                  <li><MarketCap price={mockStockQuote.c}/></li>
+                  <li>450.94</li>
+                  <li>687.92</li>
+                  <li>280</li>
+                </ul>
               </div>
             </div>
             <div className='topgainer_container'>

@@ -6,7 +6,7 @@ import { mockSearchResults } from "../constants/mock";
 
 function Search() {
     const [input, setInput] = useState("");
-    const [bestMatches, setBestMatches] = useState([]);
+    const [bestMatches, setBestMatches] = useState(mockSearchResults.result);
 
     const clear = () => {
         setInput("");
