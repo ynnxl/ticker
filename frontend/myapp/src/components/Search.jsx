@@ -1,31 +1,58 @@
 import React, { useState } from "react";
+import "../styles/PageStyle.css";
+import { searchSymbols } from "../api/stock-api";
+import SearchResults from "./SearchResults";
+import { mockSearchResults } from "../constants/mock";
 
 function Search() {
-    // const [input, setInput] = useState("");
-    // const [bestMatches, setBestMatches] = useState(mockSearchResult.results);
+    const [input, setInput] = useState("");
+    const [bestMatches, setBestMatches] = useState([]);
 
-    // const clear = () => {
-    //     setInput("");
-    //     setBestMatches([]);
-    // }
-    // const updateBestMatches = () => {
-    //     setBestMatches(mockSearchResult.result);
-    // }
+    const clear = () => {
+        setInput("");
+        setBestMatches([]);
+    };
+
+    const updateBestMatches = async () => {
+        try {
+            if (input) {
+                const searchResults = await searchSymbols(input);
+                console.log("API Response:", searchResults);
+                const result = searchResults.result;
+                setBestMatches(result);
+            } else {
+                setBestMatches([]);
+            }
+        } catch (error) {
+            setBestMatches([]);
+            console.log("Error fetching search results:", error);
+        }
+    };
+
     return (
-        <div className="flex item-center my-4 border-2 rounded md relative z-50 w-96 bg-white border-neutral-200">
-            <input type="text" 
-            // value={input} 
-            className="w-full px-4 py-2 focus:outline-none rounder-md" 
-            placeholder="Search stock..." 
-            // onChange={(event) => {setInput(event.target.value);}}
-            // onKeyPress={(event) => {
-                // if (event.key === "Enter") {
-                //     updateBestMatches();
-                // }
-            // }}
+        <div className="searchbar_container">
+            <input 
+                type="text" 
+                value={input}
+                className="searchbar" 
+                placeholder="Search stock..." 
+                onChange={(event) => setInput(event.target.value)}
+                onKeyDown={(event) => {
+                    if (event.key === "Enter") {
+                        updateBestMatches();
+                    }
+                }}
             />
+
+            {input && (
+                <button onClick={clear}>Clear</button>
+            )}
+            {input && (
+                <button onClick={updateBestMatches}>Search</button>
+            )}
+            {input && bestMatches.length > 0 ? <SearchResults result={bestMatches} /> : null}
         </div>
-    )
+    );
 }
 
 export default Search;
