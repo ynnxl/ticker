@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/PageStyle.css";
 import SearchResults from "./SearchResults";
 
@@ -9,6 +10,8 @@ function Search() {
     const [input, setInput] = useState("");
     const [bestMatches, setBestMatches] = useState([]);
     const [filteredResults, setFilteredResults] = useState([]);
+
+    const navigate = useNavigate();
 
     const fetchWithErrorHandling = async (url) => {
         try {
@@ -80,6 +83,9 @@ function Search() {
 
     return (
         <div className="searchbar_container">
+            <button className="home_button" onClick={() => navigate("/")}>
+                Home
+            </button>
             <input
                 type="text"
                 value={input}
@@ -89,7 +95,7 @@ function Search() {
             />
 
             {input && (
-                <button className="clear"onClick={clear}>Clear</button>
+                <button className="clear" onClick={clear}>Clear</button>
             )}
 
             {filteredResults.length > 0 ? (

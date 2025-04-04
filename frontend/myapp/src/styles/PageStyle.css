@@ -66,8 +66,22 @@
     height: auto;
     width: 30%;
 }
-.searchbar_container{
-    
+.home_button{
+    color: green;
+    font-size: 16px;
+    padding-right: 30px;
+}
+.home_button:hover{
+    color: white;
+    cursor: pointer;
+}
+.clear{
+    color: green;
+    padding-left: 30px;
+}
+.clear:hover{
+    color: white;
+    cursor: pointer;
 }
 .searchbar{
     width: 300px;
@@ -106,11 +120,80 @@
     display: flex;
     justify-content: space-between;
 }
+.searchresult_list:hover{
+    color:green;
+    font-weight: bold;
+}
+.stockdetails_container{
+    padding: 20px;
+    display: flex;
+}
+.stockdetails_chart{
+    width: 50%;
+    padding: 20px;
+    border-style: solid;
+    border-color: hsla(0, 0%, 100%, 0.30);
+    border-width: 1px;
+    border-radius: 3px;
+}
+.stockdetails_details{
+    width: 50%;
+    padding: 20px;
+    border-style: solid;
+    border-color: hsla(0, 0%, 100%, 0.30);
+    border-width: 1px;
+    border-radius: 3px;
+}
+.website_link{
+    color: white;
+    font-size: 15px;
+}
+.website_link:hover{
+    color: green;
+    cursor: pointer;
+}
+.marketcap_list{
+    color: rgba(255, 255, 255, 0.65);
+}
+.topgainers_list{
+    color: rgba(255, 255, 255, 0.65);
+}
+.portfolio_update{
+    color: white;
+    font-size: 16px;
+}
+.portfolio_update:hover{
+    color: green;
+    cursor: pointer;
+}
+.percentchange{
+    color: red;
+}
+.add_button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.add_button:hover {
+    background-color: #218838;
+}
 
 button{
     border: none;
 }
-.searchresult_list:hover{
-    color:green;
-    font-weight: bold;
+
+p{
+    color: white;
+}
+h1{
+    color: white;
+}
+li{
+    padding-bottom: 5px;
 }
