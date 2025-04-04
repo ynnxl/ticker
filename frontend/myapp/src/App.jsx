@@ -54,7 +54,7 @@ function App() {
   };
 
   useEffect(() => {
-    const symbols = ["AAPL", "META", "TSLA", "GOOGL", "AMZN", "NVDA", "AMD"];
+    const symbols = ["AAPL", "META", "TSLA", "GOOGL", "NVDA", "AMD"];
     fetchStockDetailsAndQuotes(symbols);
   }, []);
 
@@ -119,7 +119,7 @@ function App() {
                         <h3>Ticker</h3>
                         {stockData.map((stock) => (
                           <li key={stock.ticker}>
-                            {stock.ticker}
+                            {stock.ticker} 
                             <button
                               className="add_button"
                               onClick={() => addToPortfolio(stock)}
