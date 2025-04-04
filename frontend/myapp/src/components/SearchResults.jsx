@@ -4,13 +4,13 @@ const SearchResults = ({ result }) => {
     console.log("SearchResults prop:", result);
     return (
         <ul className="searchresult_ulist">
-            {result.map((item) => {
+            {result.map((item, index) => {
                 return (
-                    <li className="searchresult_list"
-                    key={item.symbol}>
+                    <button className="searchresult_list"
+                    key={index}>
                         <span>{item.symbol}</span>
                         <span>{item.description}</span>
-                    </li>
+                    </button>
                 )
         })}
         </ul>

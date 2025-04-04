@@ -1,6 +1,7 @@
 *{
     font-family: 'Inter', sans-serif;
     background-color: #232323;
+    list-style-type: none;
 }
 .header{
     height: 60px;;
@@ -15,10 +16,11 @@
     border-radius: 5px;
 }
 .page_title_container{
-    padding: 50px;
+    padding: 90px;
 }
 .page_title{
     color: white;
+    font-size: 50px;
     display: flex;
     justify-content: space-around;
 }
@@ -36,6 +38,10 @@
     height: auto;
     width: 30%;
 }
+.marketcap_list {
+    display: flex;
+    justify-content: space-evenly;
+}
 .topgainer_container{
     color: white;
     padding: 0px 20px 0px 20px;
@@ -45,6 +51,10 @@
     border-radius: 5px;
     height: auto;
     width: 30%;
+}
+.topgainers_list {
+    display: flex;
+    justify-content: space-evenly;
 }
 .myportfolio_container{
     color: white;
@@ -62,7 +72,8 @@
 .searchbar{
     width: 300px;
     height: 25px;
-    color: white;
+    color: green;
+    font-size: 16px;
     background-color: hsla(0, 0%, 100%, 0.05);
     border-style: solid;
     border-color: hsla(0, 0%, 100%, 0.30);
@@ -76,14 +87,9 @@
     outline: none;
 }
 .searchresult_ulist{
-    color: green;
-    text-decoration: none;
-    
     position: absolute;
-    height: 100px;
-    width: 300px;
-    color: white;
-    background-color: hsl(0, 0%, 49%);
+    height: Auto;
+    width: 400px;
     border-style: solid;
     border-color: hsla(0, 0%, 100%, 0.30);
     border-width: 1px;
@@ -94,6 +100,17 @@
     justify-content: space-between;
 }
 .searchresult_list{
+    color: white;
+    font-size: 15px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
 }
 
+button{
+    border: none;
+}
+.searchresult_list:hover{
+    color:green;
+    font-weight: bold;
+}

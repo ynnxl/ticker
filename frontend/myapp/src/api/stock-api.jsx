@@ -1,5 +1,5 @@
-const basePath = import.meta.env.VITE_API_BASE_URL || "https://finnhub.io/api/v1";
-const apiKey = import.meta.env.VITE_API_KEY;
+const basePath = 'https://finnhub.io/api/v1';
+const apiKey = 'cvlh98hr01qj3umdd18gcvlh98hr01qj3umdd190';
 
 const fetchWithErrorHandling = async (url) => {
     try {
@@ -31,4 +31,3 @@ export const fetchQuote = async (stockSymbol) => {
     const url = `${basePath}/quote?symbol=${stockSymbol}&token=${apiKey}`;
     return await fetchWithErrorHandling(url);
 };
-

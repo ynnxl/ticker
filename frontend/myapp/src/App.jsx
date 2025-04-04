@@ -1,80 +1,126 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/PageStyle.css";
 import Header from "./components/Header";
-import Details from "./components/Details";
-import { fetchStockDetails } from "./api/stock-api";
-import StockContext from "./context/StockContext";
-import MarketCap from "./components/MarketCap";
-import { mockCompanyDetails, mockStockQuote } from "./constants/mock";
 
 function App() {
+  const basePath = "https://finnhub.io/api/v1";
+  const apiKey = "cvnirc1r01qq3c7fjhmgcvnirc1r01qq3c7fjhn0";
 
-  const [stockSymbol, setStockSymbol] = useState("FB");
+  const [stockData, setStockData] = useState([]);
+
+  const fetchWithErrorHandling = async (url) => {
+    try {
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        const message = `An error has occurred: ${response.status}`;
+        throw new Error(message);
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error("Network error:", error);
+      throw error;
+    }
+  };
+
+  const fetchStockDetailsAndQuotes = async (symbols) => {
+    try {
+      const detailsPromises = symbols.map((symbol) =>
+        fetchWithErrorHandling(`${basePath}/stock/profile2?symbol=${symbol}&token=${apiKey}`)
+      );
+
+      const quotesPromises = symbols.map((symbol) =>
+        fetchWithErrorHandling(`${basePath}/quote?symbol=${symbol}&token=${apiKey}`)
+      );
+
+      const details = await Promise.all(detailsPromises);
+      const quotes = await Promise.all(quotesPromises);
+
+      const combinedData = symbols.map((symbol, index) => ({
+        ticker: symbol,
+        name: details[index]?.name || "N/A",
+        price: quotes[index]?.c || "N/A",
+        changePercent: quotes[index]?.dp || "N/A",
+      }));
+
+      setStockData(combinedData);
+    } catch (error) {
+      console.error("Error fetching stock data:", error);
+    }
+  };
+
+  useEffect(() => {
+    const symbols = ["AAPL", "META", "TSLA", "GOOGL", "AMZN", "NVDA"];
+    fetchStockDetailsAndQuotes(symbols);
+  }, []);
 
   return (
     <div>
-      <StockContext.Provider value={{stockSymbol, setStockSymbol}}>
       <div>
-        <Header/>
+        <Header />
       </div>
       <div>
-        <div className='page_title_container'>
-          <h1 className='page_title'>Welcome to Ticker</h1>
+        <div className="page_title_container">
+          <h1 className="page_title">Welcome To Ticker</h1>
         </div>
-        <div className='homepage_container'>
-            <div className='marketcap_container'>
-              <h3>Market Cap</h3>
-              <div>
-                <ul>
-                  <h3>Ticker</h3>
-                  <li><MarketCap symbol={mockCompanyDetails.name}/></li>
-                  <li> Google</li>
-                  <li>Facebook</li>
-                  <li>Tesla</li>
-                </ul>
-                <ul>
-                  <h3>Price</h3>
-                  <li><MarketCap price={mockStockQuote.c}/></li>
-                  <li>450.94</li>
-                  <li>687.92</li>
-                  <li>280</li>
-                </ul>
-              </div>
+        <div className="homepage_container">
+          <div className="marketcap_container">
+            <h3 className="marketcap_title">Market Cap</h3>
+            <div className="marketcap_list">
+              <ul>
+                <h3>Ticker</h3>
+                {stockData.map((stock) => (
+                  <li key={stock.ticker}>{stock.ticker}</li>
+                ))}
+              </ul>
+              <ul>
+                <h3>Name</h3>
+                {stockData.map((stock) => (
+                  <li key={stock.ticker}>{stock.name}</li>
+                ))}
+              </ul>
+              <ul>
+                <h3>Price</h3>
+                {stockData.map((stock) => (
+                  <li key={stock.ticker}>${stock.price}</li>
+                ))}
+              </ul>
             </div>
-            <div className='topgainer_container'>
-              <h3>Top Gainers</h3>
-              <div>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Ticker</th>
-                      <th>Price</th>
-                      <th>Date</th>
-                    </tr>
-                  </thead>
-                </table>
-                <MarketCap symbol={mockCompanyDetails.ticker} price={300} change={30} currency={"USD"}/>
-              </div>
+          </div>
+          <div className="topgainer_container">
+            <h3>Top Gainers</h3>
+            <div className="topgainers_list">
+              <ul>
+                <h3>Ticker</h3>
+                {stockData.map((stock) => (
+                  <li key={stock.ticker}>{stock.ticker}</li>
+                ))}
+              </ul>
+              <ul>
+                <h3>Name</h3>
+                {stockData.map((stock) => (
+                  <li key={stock.ticker}>{stock.name}</li>
+                ))}
+              </ul>
+              <ul>
+                <h3>Change (%)</h3>
+                {stockData.map((stock) => (
+                  <li key={stock.ticker}>{stock.changePercent}%</li>
+                ))}
+              </ul>
             </div>
-            <div className='myportfolio_container'>
-              <h3>My Portfolio</h3>
-              <div>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Ticker</th>
-                      <th>Price</th>
-                      <th>Date</th>
-                    </tr>
-                  </thead>
-                </table>
-              </div>
+          </div>
+          <div className="myportfolio_container">
+            <h3>My Portfolio</h3>
+            <div>
+              <button>Add to Portfolio</button>
             </div>
+          </div>
         </div>
       </div>
-      </StockContext.Provider>
     </div>
-  )
+  );
 }
 
 export default App;
