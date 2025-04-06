@@ -13,7 +13,7 @@ const fetchWithErrorHandling = async (url) => {
         return await response.json();
     } catch (error) {
         console.error("Network error:", error);
-        throw error; // Re-throw the error to handle it in the calling function
+        throw error; 
     }
 };
 

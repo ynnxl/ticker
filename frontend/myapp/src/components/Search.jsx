@@ -56,7 +56,7 @@ function Search() {
         }
     };
 
-    // Debounce the API call
+    
     useEffect(() => {
         const debounceTimeout = setTimeout(() => {
             if (input) {
@@ -64,12 +64,12 @@ function Search() {
             } else {
                 setBestMatches([]);
             }
-        }, 100); // 300ms debounce delay
+        }, 100); 
 
         return () => clearTimeout(debounceTimeout);
     }, [input]);
 
-    // Filter results locally based on input
+    
     useEffect(() => {
         if (input && bestMatches.length > 0) {
             const filtered = bestMatches.filter((item) =>

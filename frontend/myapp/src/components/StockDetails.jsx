@@ -12,7 +12,7 @@ import {
     Legend,
 } from "chart.js";
 
-// Register Chart.js components
+
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const StockDetails = () => {
@@ -20,7 +20,7 @@ const StockDetails = () => {
     const [stockDetails, setStockDetails] = useState(null);
     const [historicalData, setHistoricalData] = useState(null);
 
-    // Fetch stock details
+    
     useEffect(() => {
         const fetchStockDetails = async () => {
             try {
@@ -37,7 +37,7 @@ const StockDetails = () => {
         fetchStockDetails();
     }, [symbol]);
 
-    // Fetch historical stock data for the graph
+    
     useEffect(() => {
         const fetchHistoricalData = async () => {
             try {
@@ -62,7 +62,7 @@ const StockDetails = () => {
         return <p>Loading stock details...</p>;
     }
 
-    // Prepare data for the graph
+    
     const chartData = historicalData
         ? {
               labels: historicalData.t.map((timestamp) =>
@@ -71,7 +71,7 @@ const StockDetails = () => {
               datasets: [
                   {
                       label: `${symbol} Stock Price`,
-                      data: historicalData.c, // Closing prices
+                      data: historicalData.c, 
                       borderColor: "rgba(75, 192, 192, 1)",
                       backgroundColor: "rgba(75, 192, 192, 0.2)",
                       tension: 0.4,

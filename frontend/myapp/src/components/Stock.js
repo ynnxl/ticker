@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import iex from '../';
 
 class Stock extends Component {
 
